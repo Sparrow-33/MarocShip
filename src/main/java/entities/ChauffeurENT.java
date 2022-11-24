@@ -24,7 +24,7 @@ public class ChauffeurENT {
     @Column(name = "distance_parcourue")
     private int distanceParcourue;
     @ManyToOne
-    @JoinColumn(name = "type_vehicule", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "type_vehicule", referencedColumnName = "id", nullable = false,insertable = false,updatable = false)
     private VehiculeENT vehiculeByTypeVehicule;
     @OneToMany(mappedBy = "chauffeurByChauffeurId")
     private Collection<LivraisonENT> livraisonsById;
