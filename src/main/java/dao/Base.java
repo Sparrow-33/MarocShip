@@ -1,21 +1,23 @@
-package DAO;
+package dao;
 
 import JPA.Util.Util;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 import java.util.function.Consumer;
 
 public class Base<T> {
     public static EntityManager entityManager = Util.getEntityManager();
 
-    public Boolean save(T t){
-        if(executeInsideTransaction(entityManager1 -> entityManager.persist(t))){
+    public Boolean save(T t) {
+        if (executeInsideTransaction(entityManager1 -> entityManager.persist(t))) {
             return true;
         }   return false;
     }
-    public Boolean update(T t){
-        if(executeInsideTransaction(entityManager1 -> entityManager.merge(t))){
+    public Boolean update(T t) {
+        if (executeInsideTransaction(entityManager1 -> entityManager.merge(t))){
             return true;
         }   return false;
     }
