@@ -8,7 +8,6 @@ public class Util {
     public static EntityManager getEntityManager(){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-//        EntityTransaction transaction = entityManager.getTransaction();
         return entityManager;
     }
 }
