@@ -3,62 +3,34 @@ package entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "manager", schema = "marocship", catalog = "")
 public class ManagerENT {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     private int id;
     @Basic
-    @Column(name = "email")
-    private String email;
+    @Column(name = "nom", nullable = false, length = 255)
+    private String nom;
     @Basic
-    @Column(name = "password")
-    private String password;
+    @Column(name = "prenom", nullable = false, length = 255)
+    private String prenom;
+    @Basic
+    @Column(name = "email", nullable = true, length = 20)
+    private String email;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
+    public ManagerENT(String nom, String prenom, String email, String password) {
+        this.nom = nom;
+        this.prenom = prenom;
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
         this.password = password;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ManagerENT that = (ManagerENT) o;
-
-        if (id != that.id) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
-
-        return true;
+    public ManagerENT() {
     }
 
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        return result;
-    }
+    @Basic
+    @Column(name = "password", nullable = true, length = -1)
+    private String password;
+
+
 }

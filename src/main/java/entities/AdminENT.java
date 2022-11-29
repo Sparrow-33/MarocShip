@@ -1,55 +1,27 @@
 package entities;
-
 import jakarta.persistence.*;
-
 @Entity
-@Table(name = "admin", schema = "marocship", catalog = "")
 public class AdminENT {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     private int id;
     @Basic
-    @Column(name = "email")
+    @Column(name = "email", nullable = false, length = 20)
     private String email;
     @Basic
-    @Column(name = "password")
+    @Column(name = "password", nullable = false, length = -1)
     private String password;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AdminENT adminENT = (AdminENT) o;
+        AdminENT admin = (AdminENT) o;
 
-        if (id != adminENT.id) return false;
-        if (email != null ? !email.equals(adminENT.email) : adminENT.email != null) return false;
-        if (password != null ? !password.equals(adminENT.password) : adminENT.password != null) return false;
+        if (id != admin.id) return false;
+        if (email != null ? !email.equals(admin.email) : admin.email != null) return false;
+        if (password != null ? !password.equals(admin.password) : admin.password != null) return false;
 
         return true;
     }
