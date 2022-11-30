@@ -34,7 +34,7 @@ public class LivraisonENT {
     @Column(name = "created_at")
     private Timestamp createdAt;
     @ManyToOne
-    @JoinColumn(name = "chauffeur_id", referencedColumnName = "id")
+    @JoinColumn(name = "chauffeur_id", referencedColumnName = "id",insertable = false,updatable = false)
     private ChauffeurENT chauffeurByChauffeurId;
 
     public int getId() {
