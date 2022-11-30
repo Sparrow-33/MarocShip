@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "livraison", schema = "marocship", catalog = "")
@@ -29,7 +30,7 @@ public class LivraisonENT {
     private String villeArrivee;
     @Basic
     @Column(name = "date_livraison")
-    private Date dateLivraison;
+    private LocalDate dateLivraison;
     @Basic
     @Column(name = "created_at")
     private Timestamp createdAt;
@@ -85,11 +86,11 @@ public class LivraisonENT {
         this.villeArrivee = villeArrivee;
     }
 
-    public Date getDateLivraison() {
+    public LocalDate getDateLivraison() {
         return dateLivraison;
     }
 
-    public void setDateLivraison(Date dateLivraison) {
+    public void setDateLivraison(LocalDate dateLivraison) {
         this.dateLivraison = dateLivraison;
     }
 
