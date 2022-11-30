@@ -12,9 +12,9 @@ public class LivraisonENT {
     @Id
     @Column(name = "id")
     private int id;
-    @Basic
+   /* @Basic
     @Column(name = "chauffeur_id")
-    private Integer chauffeurId;
+    private Integer chauffeurId;*/
     @Basic
     @Column(name = "poids")
     private int poids;
@@ -45,13 +45,13 @@ public class LivraisonENT {
         this.id = id;
     }
 
-    public Integer getChauffeurId() {
+/*    public Integer getChauffeurId() {
         return chauffeurId;
     }
 
     public void setChauffeurId(Integer chauffeurId) {
         this.chauffeurId = chauffeurId;
-    }
+    }*/
 
     public int getPoids() {
         return poids;
@@ -111,7 +111,9 @@ public class LivraisonENT {
         if (id != that.id) return false;
         if (poids != that.poids) return false;
         if (tarif != that.tarif) return false;
+/*
         if (chauffeurId != null ? !chauffeurId.equals(that.chauffeurId) : that.chauffeurId != null) return false;
+*/
         if (villeDepart != null ? !villeDepart.equals(that.villeDepart) : that.villeDepart != null) return false;
         if (villeArrivee != null ? !villeArrivee.equals(that.villeArrivee) : that.villeArrivee != null) return false;
         if (dateLivraison != null ? !dateLivraison.equals(that.dateLivraison) : that.dateLivraison != null)
@@ -124,7 +126,9 @@ public class LivraisonENT {
     @Override
     public int hashCode() {
         int result = id;
+/*
         result = 31 * result + (chauffeurId != null ? chauffeurId.hashCode() : 0);
+*/
         result = 31 * result + poids;
         result = 31 * result + tarif;
         result = 31 * result + (villeDepart != null ? villeDepart.hashCode() : 0);

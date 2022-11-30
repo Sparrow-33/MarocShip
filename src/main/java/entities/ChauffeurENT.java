@@ -17,9 +17,9 @@ public class ChauffeurENT {
     @Basic
     @Column(name = "password")
     private String password;
-    @Basic
-    @Column(name = "type_vehicule")
-    private int typeVehicule;
+//    @Basic
+//    @Column(name = "type_vehicule")
+//    private int typeVehicule;
     @Basic
     @Column(name = "distance_parcourue")
     private int distanceParcourue;
@@ -53,13 +53,13 @@ public class ChauffeurENT {
         this.password = password;
     }
 
-    public int getTypeVehicule() {
-        return typeVehicule;
-    }
-
-    public void setTypeVehicule(int typeVehicule) {
-        this.typeVehicule = typeVehicule;
-    }
+//    public int getTypeVehicule() {
+//        return typeVehicule;
+//    }
+//
+//    public void setTypeVehicule(int typeVehicule) {
+//        this.typeVehicule = typeVehicule;
+//    }
 
     public int getDistanceParcourue() {
         return distanceParcourue;
@@ -77,7 +77,7 @@ public class ChauffeurENT {
         ChauffeurENT that = (ChauffeurENT) o;
 
         if (id != that.id) return false;
-        if (typeVehicule != that.typeVehicule) return false;
+//        if (typeVehicule != that.typeVehicule) return false;
         if (distanceParcourue != that.distanceParcourue) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
@@ -90,7 +90,7 @@ public class ChauffeurENT {
         int result = id;
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + typeVehicule;
+//        result = 31 * result + typeVehicule;
         result = 31 * result + distanceParcourue;
         return result;
     }

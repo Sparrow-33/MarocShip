@@ -15,4 +15,7 @@
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
+    <welcome-file-list>
+        <welcome-file>DashboardAdmin.xhtml</welcome-file>
+    </welcome-file-list>
 </web-app>
